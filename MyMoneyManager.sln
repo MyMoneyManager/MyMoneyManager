@@ -5,6 +5,14 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.API", "MyMoneyManager.API\MyMoneyManager.API.csproj", "{2EE8BAD6-9ADF-46B7-9D6E-8104E5E2DFFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Domain", "MyMoneyManager.Domain\MyMoneyManager.Domain.csproj", "{B8AB7EFF-085A-4E85-B946-CF337D220EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Data", "MyMoneyManager.Data\MyMoneyManager.Data.csproj", "{E2F1CF55-F77C-4C6D-A119-E0EB4216DA5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Service", "MyMoneyManager.Service\MyMoneyManager.Service.csproj", "{6F8C5715-9935-4388-A28B-A6A9FE70B07A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Shared", "MyMoneyManager.Shared\MyMoneyManager.Shared.csproj", "{CC2E9080-9947-4719-B983-FECA8BDD7D09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{2EE8BAD6-9ADF-46B7-9D6E-8104E5E2DFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EE8BAD6-9ADF-46B7-9D6E-8104E5E2DFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EE8BAD6-9ADF-46B7-9D6E-8104E5E2DFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8AB7EFF-085A-4E85-B946-CF337D220EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AB7EFF-085A-4E85-B946-CF337D220EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AB7EFF-085A-4E85-B946-CF337D220EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AB7EFF-085A-4E85-B946-CF337D220EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2F1CF55-F77C-4C6D-A119-E0EB4216DA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2F1CF55-F77C-4C6D-A119-E0EB4216DA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2F1CF55-F77C-4C6D-A119-E0EB4216DA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2F1CF55-F77C-4C6D-A119-E0EB4216DA5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8C5715-9935-4388-A28B-A6A9FE70B07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8C5715-9935-4388-A28B-A6A9FE70B07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8C5715-9935-4388-A28B-A6A9FE70B07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8C5715-9935-4388-A28B-A6A9FE70B07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
