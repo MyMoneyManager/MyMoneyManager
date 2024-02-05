@@ -1,4 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
+using MyMoneyManager.Data.DbContexts;
+
 namespace MyMoneyManager.API
 {
     public class Program
@@ -6,7 +9,8 @@ namespace MyMoneyManager.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.Services.AddDbContext<AppDbContext>(option
+                => option.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
             // Add services to the container.
 
             builder.Services.AddControllers();
