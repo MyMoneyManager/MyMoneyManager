@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyMoneyManager.Domain.Commons;
+using MyMoneyManager.Domain.Enums;
 
-namespace MyMoneyManager.Domain.Entities
+namespace MyMoneyManager.Domain.Entities;
+
+public class Category : Auditable
 {
-    internal class Category
-    {
-    }
+    public CategoryType Name { get; set; }
 }

@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyMoneyManager.Data\MyMoneyManager.Data.csproj" />
+    <ProjectReference Include="..\MyMoneyManager.Domain\MyMoneyManager.Domain.csproj" />
+    <ProjectReference Include="..\MyMoneyManager.Shared\MyMoneyManager.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
