@@ -4,9 +4,9 @@ using MyMoneyManager.Service.DTOs.Users;
 
 namespace MyMoneyManager.Service.Mappers;
 
-public class MappingProfile : Profile
+public class MapperProfile : Profile
 {
-    public MappingProfile()
+    public MapperProfile()
     {
         // Users
         CreateMap<User, UserForUpdateDto>().ReverseMap();
