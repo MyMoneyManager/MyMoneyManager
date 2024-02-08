@@ -1,7 +1,9 @@
 
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.EntityFrameworkCore;
 using MyMoneyManager.API.Extensions;
 using MyMoneyManager.API.Middlewares;
+using MyMoneyManager.API.Models;
 using MyMoneyManager.Data.DbContexts;
 using MyMoneyManager.Service.Mappers;
 using Serilog;
@@ -32,6 +34,12 @@ public class Program
         builder.Logging.AddSerilog(logger);
 
         builder.Services.AddAutoMapper(typeof(MapperProfile));
+
+        builder.Services.AddControllers(options =>
+        {
+            options.Conventions.Add(new RouteTokenTransformerConvention(
+                                            new ConfigurationApiUrlName()));
+        });
 
         var app = builder.Build();
 
