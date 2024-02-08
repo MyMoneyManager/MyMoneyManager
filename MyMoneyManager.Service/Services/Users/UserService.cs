@@ -7,7 +7,6 @@ using MyMoneyManager.Service.Commons.CollectionExtensions;
 using MyMoneyManager.Service.DTOs.Users;
 using MyMoneyManager.Service.Exceptions;
 using MyMoneyManager.Service.Interfaces.Users;
-using System.Data.Common;
 
 namespace MyMoneyManager.Service.Services.Users;
 
@@ -27,7 +26,7 @@ public class UserService : IUserService
     /// </summary>
     /// <param name="dto"></param>
     /// <returns></returns>
-    /// <exception cref="CustomException"></exception>
+    /// <exception cref="CustomException"></exception>    
     public async Task<UserForResultDto> AddAsync(UserForCreationDto dto)
     {
         var user = userRepository.SelectAll()
