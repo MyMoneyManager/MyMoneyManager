@@ -13,6 +13,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Service", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Shared", "MyMoneyManager.Shared\MyMoneyManager.Shared.csproj", "{CC2E9080-9947-4719-B983-FECA8BDD7D09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{52FEF440-EB82-4A63-B571-63C7EF7F6C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.API", "src\MyMoneyManager.Api\MyMoneyManager.API.csproj", "{2154B59C-4145-4330-A434-9997B30BF426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Domain", "src\MyMoneyManager.Domain\MyMoneyManager.Domain.csproj", "{A011A1EE-F848-46F9-A164-1E85173D9F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Data", "src\MyMoneyManager.Data\MyMoneyManager.Data.csproj", "{FCC9C24E-E186-4663-9CCB-34C4AB75D519}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Service", "src\MyMoneyManager.Service\MyMoneyManager.Service.csproj", "{DEFB1E39-71E3-4F87-B15E-9837CC54C338}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMoneyManager.Shared", "src\MyMoneyManager.Shared\MyMoneyManager.Shared.csproj", "{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +51,38 @@ Global
 		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC2E9080-9947-4719-B983-FECA8BDD7D09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2154B59C-4145-4330-A434-9997B30BF426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2154B59C-4145-4330-A434-9997B30BF426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2154B59C-4145-4330-A434-9997B30BF426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2154B59C-4145-4330-A434-9997B30BF426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A011A1EE-F848-46F9-A164-1E85173D9F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A011A1EE-F848-46F9-A164-1E85173D9F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A011A1EE-F848-46F9-A164-1E85173D9F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A011A1EE-F848-46F9-A164-1E85173D9F16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC9C24E-E186-4663-9CCB-34C4AB75D519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC9C24E-E186-4663-9CCB-34C4AB75D519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC9C24E-E186-4663-9CCB-34C4AB75D519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC9C24E-E186-4663-9CCB-34C4AB75D519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFB1E39-71E3-4F87-B15E-9837CC54C338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFB1E39-71E3-4F87-B15E-9837CC54C338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFB1E39-71E3-4F87-B15E-9837CC54C338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFB1E39-71E3-4F87-B15E-9837CC54C338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {795C5B62-5BFF-413D-A6DD-58614D294408}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2154B59C-4145-4330-A434-9997B30BF426} = {52FEF440-EB82-4A63-B571-63C7EF7F6C9F}
+		{A011A1EE-F848-46F9-A164-1E85173D9F16} = {52FEF440-EB82-4A63-B571-63C7EF7F6C9F}
+		{FCC9C24E-E186-4663-9CCB-34C4AB75D519} = {52FEF440-EB82-4A63-B571-63C7EF7F6C9F}
+		{DEFB1E39-71E3-4F87-B15E-9837CC54C338} = {52FEF440-EB82-4A63-B571-63C7EF7F6C9F}
+		{413849C0-13DF-4AF8-A1A8-4B44FE9FAF31} = {52FEF440-EB82-4A63-B571-63C7EF7F6C9F}
 	EndGlobalSection
 EndGlobal
