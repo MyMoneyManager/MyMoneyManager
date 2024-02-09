@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyMoneyManager.Data.DbContexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyMoneyManager.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240207095727_AboutEntityMigrations")]
+    partial class AboutEntityMigrations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +37,6 @@ namespace MyMoneyManager.Data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("IsDeleted")

@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyMoneyManager.Domain.Configurations;
-using MyMoneyManager.Service.DTOs.Users;
-using MyMoneyManager.Service.Interfaces.Users;
+using MyMoneyManager.Service.DTOs.AboutUs;
+using MyMoneyManager.Service.Interfaces.IAboutUsServices;
 
-namespace MyMoneyManager.API.Controllers;
+namespace MyMoneyManager.API.Controllers.AboutUsControllers;
 
-public class UsersController : BaseController
+public class AboutUsController : BaseController
 {
-    private readonly IUserService _userService;
+    private readonly IAboutUsService _aboutUsService;
 
-    public UsersController(IUserService userService)
+    public AboutUsController(IAboutUsService aboutUsService)
     {
-        _userService = userService;
+        _aboutUsService = aboutUsService;
     }
 
     /// <summary>
@@ -20,19 +19,16 @@ public class UsersController : BaseController
     /// <param name="dto">Data for creating the new user.</param>
     /// <returns>Returns an IActionResult with the result of the insertion operation.</returns>
     [HttpPost]
-    public async Task<IActionResult> InsertAsync([FromBody] UserForCreationDto dto)
-        => Ok(await _userService.AddAsync(dto));
-
+    public async Task<IActionResult> InsertAsync([FromBody] AboutUsForCreationDto dto)
+        => Ok(await _aboutUsService.AddAsync(dto));
 
     /// <summary>
     /// Handles HTTP GET requests to retrieve all users with optional pagination parameters.
     /// </summary>
-    /// <param name="@params">Optional pagination parameters for controlling the result set.</param>
     /// <returns>Returns an IActionResult with the result of the retrieval operation.</returns>
     [HttpGet]
-    public async Task<IActionResult> GetAllAsync([FromQuery] PaginationParams @params)
-        => Ok(await _userService.RetrieveAllAsync(@params));
-
+    public async Task<IActionResult> GetAllAsync()
+        => Ok(await _aboutUsService.RetrieveAllAsync());
 
     /// <summary>
     /// Handles HTTP GET requests to retrieve a user by their unique identifier.
@@ -41,7 +37,7 @@ public class UsersController : BaseController
     /// <returns>Returns an IActionResult with the result of the retrieval operation.</returns>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetByIdAsync([FromRoute] long id)
-        => Ok(await _userService.RetrieveByIdAsync(id));
+        => Ok(await _aboutUsService.GetByIdAsync(id));
 
 
     /// <summary>
@@ -51,7 +47,7 @@ public class UsersController : BaseController
     /// <returns>Returns an IActionResult with the result of the removal operation.</returns>
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAsync([FromRoute] long id)
-        => Ok(await _userService.RemoveAsync(id));
+        => Ok(await _aboutUsService.RemoveAsync(id));
 
 
     /// <summary>
@@ -61,7 +57,6 @@ public class UsersController : BaseController
     /// <param name="dto">Data for updating the existing user.</param>
     /// <returns>Returns an IActionResult with the result of the update operation.</returns>
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAsync([FromRoute] long id, [FromBody] UserForUpdateDto dto)
-        => Ok(await _userService.ModifyAsync(id, dto));
-
+    public async Task<IActionResult> UpdateAsync([FromRoute] long id, [FromBody] AboutUsForUpdateDto dto)
+        => Ok(await _aboutUsService.ModifyAsync(id, dto));
 }
