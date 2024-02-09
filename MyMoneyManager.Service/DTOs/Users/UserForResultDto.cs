@@ -7,10 +7,10 @@ public class UserForResultDto
 {
     public long Id { get; set; }
 
-    [DisplayName("First Name")]
+    //[DisplayName("First Name")]
     public string FirstName { get; set; }
 
-    [DisplayName("LastName")]
+    //[DisplayName("LastName")]
     public string LastName { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }

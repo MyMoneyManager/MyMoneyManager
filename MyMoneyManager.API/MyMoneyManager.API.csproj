@@ -29,4 +29,9 @@
     <ProjectReference Include="..\MyMoneyManager.Service\MyMoneyManager.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\AboutUs\" />
+    <Folder Include="wwwroot\AboutUs\AboutUsAsset\" />
+  </ItemGroup>
+
 </Project>
