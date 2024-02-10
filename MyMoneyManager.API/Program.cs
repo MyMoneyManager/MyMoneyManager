@@ -6,6 +6,7 @@ using MyMoneyManager.API.Middlewares;
 using MyMoneyManager.API.Models;
 using MyMoneyManager.Data.DbContexts;
 using MyMoneyManager.Service.Mappers;
+using MyMoneyManager.Shared.Helpers;
 using Serilog;
 
 public class Program
@@ -24,6 +25,7 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddCustomServices();
+        EnvoronmentHelper.WebRootPath = Path.GetFullPath("wwwroot");
 
         //Logger
         var logger = new LoggerConfiguration()

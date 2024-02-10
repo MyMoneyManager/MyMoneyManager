@@ -3,7 +3,7 @@ using MyMoneyManager.Domain.Enums;
 
 namespace MyMoneyManager.Domain.Entities;
 
-public class Transaction : Auditable
+public class Tranzaction : Auditable
 {
     public long WalletId { get; set; }
     public Wallet Wallet { get; set; }

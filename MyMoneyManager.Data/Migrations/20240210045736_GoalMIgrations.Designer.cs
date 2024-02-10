@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyMoneyManager.Data.DbContexts;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyMoneyManager.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240210045736_GoalMIgrations")]
+    partial class GoalMIgrations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,7 +248,7 @@ namespace MyMoneyManager.Data.Migrations
                     b.ToTable("Reports");
                 });
 
-            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Tranzaction", b =>
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Transaction", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -284,7 +287,7 @@ namespace MyMoneyManager.Data.Migrations
 
                     b.HasIndex("WalletId");
 
-                    b.ToTable("Tranzactions");
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.User", b =>
@@ -427,7 +430,7 @@ namespace MyMoneyManager.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Tranzaction", b =>
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Transaction", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.Category", "Category")
                         .WithMany()
