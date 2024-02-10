@@ -18,7 +18,7 @@ public class AppDbContext : DbContext
     public DbSet<Report> Reports { get; set; }
     public DbSet<Wallet> Wallets { get; set; }
     public DbSet<Remainder> Remainders { get; set; }
-    public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<Tranzaction> Tranzactions { get; set; }
 
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
     //{
