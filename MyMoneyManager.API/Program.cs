@@ -7,6 +7,7 @@ using MyMoneyManager.API.Models;
 using MyMoneyManager.Data.DbContexts;
 using MyMoneyManager.Service.Mappers;
 using MyMoneyManager.Shared.Helpers;
+using Newtonsoft.Json;
 using Serilog;
 
 public class Program
@@ -14,6 +15,13 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        /// Fix the Cycle
+        builder.Services.AddControllers()
+             .AddNewtonsoftJson(options =>
+             {
+                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+             });
 
         builder.Services.AddDbContext<AppDbContext>(option
             => option.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -23,6 +31,9 @@ public class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        // CORS
+        builder.Services.ConfigureCors();
 
         builder.Services.AddCustomServices();
         EnvoronmentHelper.WebRootPath = Path.GetFullPath("wwwroot");

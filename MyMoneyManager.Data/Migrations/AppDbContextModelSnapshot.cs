@@ -245,7 +245,7 @@ namespace MyMoneyManager.Data.Migrations
                     b.ToTable("Reports");
                 });
 
-            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Tranzaction", b =>
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Transaction", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -378,7 +378,7 @@ namespace MyMoneyManager.Data.Migrations
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.Feedback", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Feedbacks")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -389,7 +389,7 @@ namespace MyMoneyManager.Data.Migrations
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.Goal", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Goals")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -406,7 +406,7 @@ namespace MyMoneyManager.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("MyMoneyManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Remainders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -419,7 +419,7 @@ namespace MyMoneyManager.Data.Migrations
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.Report", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Reports")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -427,7 +427,7 @@ namespace MyMoneyManager.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Tranzaction", b =>
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Transaction", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.Category", "Category")
                         .WithMany()
@@ -436,7 +436,7 @@ namespace MyMoneyManager.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("MyMoneyManager.Domain.Entities.Wallet", "Wallet")
-                        .WithMany()
+                        .WithMany("Transactions")
                         .HasForeignKey("WalletId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -449,7 +449,7 @@ namespace MyMoneyManager.Data.Migrations
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.Wallet", b =>
                 {
                     b.HasOne("MyMoneyManager.Domain.Entities.User", "User")
-                        .WithMany()
+                        .WithMany("Wallets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -460,6 +460,24 @@ namespace MyMoneyManager.Data.Migrations
             modelBuilder.Entity("MyMoneyManager.Domain.Entities.AboutUs.AboutUs", b =>
                 {
                     b.Navigation("AboutUsAssets");
+                });
+
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.User", b =>
+                {
+                    b.Navigation("Feedbacks");
+
+                    b.Navigation("Goals");
+
+                    b.Navigation("Remainders");
+
+                    b.Navigation("Reports");
+
+                    b.Navigation("Wallets");
+                });
+
+            modelBuilder.Entity("MyMoneyManager.Domain.Entities.Wallet", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

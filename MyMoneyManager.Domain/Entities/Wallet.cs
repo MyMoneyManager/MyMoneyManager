@@ -9,4 +9,5 @@ public class Wallet : Auditable
     public decimal Balance { get; set; }
     public string Description { get; set; }
 
+    public IEnumerable<Transaction> Transactions { get; set; }
 }

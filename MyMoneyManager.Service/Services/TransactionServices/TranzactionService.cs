@@ -15,12 +15,12 @@ public class TranzactionService : ITranzactionService
     private readonly IMapper _mapper;
     private readonly IRepository<Wallet> _walletRepository;
     private readonly IRepository<Category> _categoryRepository;
-    private readonly IRepository<Tranzaction> _tranzactionRepository;
+    private readonly IRepository<Transaction> _tranzactionRepository;
 
     public TranzactionService(IMapper mapper, 
         IRepository<Wallet> walletRepository, 
         IRepository<Category> categoryRepository,
-        IRepository<Tranzaction> tranzactionRepository)
+        IRepository<Transaction> tranzactionRepository)
     {
         _mapper = mapper;
         _walletRepository = walletRepository;
@@ -49,7 +49,7 @@ public class TranzactionService : ITranzactionService
         if (transaction is not null)
             throw new CustomException(409, "Transaction is already exists");
 
-        var mapped = _mapper.Map<Tranzaction>(dto);
+        var mapped = _mapper.Map<Transaction>(dto);
         mapped.CreatedAt = DateTime.UtcNow;
 
         var result = await _tranzactionRepository.InsertAsync(mapped);

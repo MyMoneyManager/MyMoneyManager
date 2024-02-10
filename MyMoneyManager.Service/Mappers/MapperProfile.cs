@@ -47,9 +47,9 @@ public class MapperProfile : Profile
         CreateMap<Report,ReportForUpdateDto>().ReverseMap();
         
         // Transaction 
-        CreateMap<Tranzaction,TranzactionForCreationDto>().ReverseMap();
-        CreateMap<Tranzaction,TranzactionForResultDto>().ReverseMap();
-        CreateMap<Tranzaction,TranzactionForUpdateDto>().ReverseMap();
+        CreateMap<Transaction,TranzactionForCreationDto>().ReverseMap();
+        CreateMap<Transaction,TranzactionForResultDto>().ReverseMap();
+        CreateMap<Transaction,TranzactionForUpdateDto>().ReverseMap();
 
         // Category 
         CreateMap<Category, CategoryForCreationDto>().ReverseMap();
