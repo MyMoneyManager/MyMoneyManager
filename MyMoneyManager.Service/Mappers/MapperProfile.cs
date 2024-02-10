@@ -4,6 +4,7 @@ using MyMoneyManager.Domain.Entities.AboutUs;
 using MyMoneyManager.Service.DTOs.AboutUs;
 using MyMoneyManager.Service.DTOs.AboutUsAssets;
 using MyMoneyManager.Service.DTOs.Feedbacks;
+using MyMoneyManager.Service.DTOs.Goals;
 using MyMoneyManager.Service.DTOs.Users;
 
 namespace MyMoneyManager.Service.Mappers;
@@ -32,6 +33,10 @@ public class MapperProfile : Profile
         CreateMap<Feedback,FeedbackForResultDto>().ReverseMap();
         CreateMap<Feedback,FeedbackForUpdateDto>().ReverseMap();
 
+        // Goal
+        CreateMap<Goal,GoalForCreationDto>().ReverseMap();
+        CreateMap<Goal,GoalForResultDto>().ReverseMap();
+        CreateMap<Goal,GoalForUpdateDto>().ReverseMap();
         
     }
 }
