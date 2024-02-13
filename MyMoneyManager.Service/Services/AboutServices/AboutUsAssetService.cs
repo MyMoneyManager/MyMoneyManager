@@ -72,6 +72,7 @@ public class AboutUsAssetService : IAboutUsAssetService
         string resultImage = Path.Combine("AboutUs", "AboutUsAsset", fileName);
 
         var mapped = _mapper.Map<AboutUsAsset>(dto);
+        mapped.CreatedAt = DateTime.UtcNow;
         mapped.Image = resultImage;
 
         var result = await _aboutUsAssetRepository.InsertAsync(mapped);

@@ -32,6 +32,13 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("Administration", p => p.RequireRole("Admin", "SuperAdmin"));
+            
+        });
+        builder.Services.AddJwtService(builder.Configuration);
+
         // CORS
         builder.Services.ConfigureCors();
 

@@ -21,7 +21,7 @@ public class CategoriesController : BaseController
     /// <param name="dto">Data for creating the new user.</param>
     /// <returns>Returns an IActionResult with the result of the insertion operation.</returns>
     [HttpPost]
-    public async Task<IActionResult> InsertAsync([FromBody] CategoryForCreationDto dto)
+    public async Task<IActionResult> InsertAsync([FromForm] CategoryForCreationDto dto)
         => Ok(await _categoryService.AddAsync(dto));
 
 
