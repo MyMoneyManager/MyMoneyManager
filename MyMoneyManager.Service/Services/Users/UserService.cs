@@ -108,6 +108,30 @@ public class UserService : IUserService
     }
 
     /// <summary>
+    /// Retrieves all user from database with pagination by role
+    /// </summary>
+    /// <param name="params"></param>
+    /// <param name="role"></param>
+    /// <returns></returns>
+    public async Task<IEnumerable<UserForResultDto>> RetrieveAllByRoleAsync(PaginationParams @params, long roleId)
+    {
+        var users = await userRepository.SelectAll()
+            .Where(u => u.RolId == roleId && !u.IsDeleted)
+            .ToPagedList(@params)
+            .ToListAsync();
+
+        return mapper.Map<IEnumerable<UserForResultDto>>(users);
+    }
+
+    /// <summary>
+    /// Retrieve user by email
+    /// </summary>
+    /// <param name="email"></param>
+    /// <returns></returns>
+    public async Task<User> RetrieveByEmailAsync(string email)
+     => await userRepository.SelectAll().Where(u => u.Email == email).AsNoTracking().FirstOrDefaultAsync();
+
+    /// <summary>
     /// Retrieves a user from the database based on the provided user ID.
     /// </summary>
     /// <param name="id">The unique identifier of the user to be retrieved.</param>

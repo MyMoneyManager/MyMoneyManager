@@ -1,4 +1,5 @@
 ﻿using MyMoneyManager.Domain.Commons;
+using MyMoneyManager.Domain.Entities.Authorizations;
 using MyMoneyManager.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,7 +15,8 @@ public class User : Auditable
     public string Email { get; set; }
     public string Password { get; set; }
     public UserGenderType GenderType { get; set; }
-
+    public long RolId { get; set; }
+    public Role Role { get; set; }
 
     public IEnumerable<Wallet> Wallets { get; set; }
     public IEnumerable<Goal> Goals { get; set; }

@@ -33,6 +33,7 @@ public class FeedbackService : IFeedbackService
             throw new CustomException(404,"User not found");
 
         var feedback = _mapper.Map<Feedback>(dto);
+        feedback.CreatedAt = DateTime.UtcNow;
         var insertFeedback = await _repository.InsertAsync(feedback);
 
         var result = _mapper.Map<FeedbackForResultDto>(insertFeedback);

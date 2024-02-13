@@ -1,12 +1,16 @@
 ﻿using AutoMapper;
 using MyMoneyManager.Domain.Entities;
 using MyMoneyManager.Domain.Entities.AboutUs;
+using MyMoneyManager.Domain.Entities.Authorizations;
 using MyMoneyManager.Service.DTOs.AboutUs;
 using MyMoneyManager.Service.DTOs.AboutUsAssets;
 using MyMoneyManager.Service.DTOs.Categories;
 using MyMoneyManager.Service.DTOs.Feedbacks;
 using MyMoneyManager.Service.DTOs.Goals;
+using MyMoneyManager.Service.DTOs.Permissions;
 using MyMoneyManager.Service.DTOs.Reports;
+using MyMoneyManager.Service.DTOs.RolePermisisons;
+using MyMoneyManager.Service.DTOs.Roles;
 using MyMoneyManager.Service.DTOs.Transactions;
 using MyMoneyManager.Service.DTOs.Users;
 
@@ -55,5 +59,20 @@ public class MapperProfile : Profile
         CreateMap<Category, CategoryForCreationDto>().ReverseMap();
         CreateMap<Category,CategoryForResultDto>().ReverseMap();
         CreateMap<Category,CategoryForUpdateDto>().ReverseMap();
+
+        // Role
+        CreateMap<Role, RoleForResultDto>().ReverseMap();
+        CreateMap<Role, RoleForCreationDto>().ReverseMap();
+        CreateMap<Role, RoleForUpdateDto>().ReverseMap();
+
+        // RolePermission
+        CreateMap<RolePermission, RolePermissionForResultDto>().ReverseMap();
+        CreateMap<RolePermission, RolePermissionForCreateDto>().ReverseMap();
+        CreateMap<RolePermission, RolePermissionForUpdateDto>().ReverseMap();
+
+        // Permission
+        CreateMap<Permission, PermissionForResultDto>().ReverseMap();
+        CreateMap<Permission, PermissionForCreationDto>().ReverseMap();
+        CreateMap<Permission, PermissionForUpdateDto>().ReverseMap();
     }
 }

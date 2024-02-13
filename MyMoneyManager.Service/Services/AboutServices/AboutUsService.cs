@@ -37,6 +37,7 @@ public class AboutUsService : IAboutUsService
             throw new CustomException(404, "AboutUS alrerady exists");
 
         var mapped = _mapper.Map<AboutUs>(dto);
+        mapped.CreatedAt = DateTime.UtcNow;
         var result = await _repository.InsertAsync(mapped);
 
         return _mapper.Map<AboutUsForResultDto>(result);
@@ -83,7 +84,6 @@ public class AboutUsService : IAboutUsService
             throw new CustomException(409, "AboutUs is not found");
         var mapped = _mapper.Map(dto, aboutUs);
         mapped.UpdatedAt = DateTime.UtcNow;
-
         var result = await _repository.InsertAsync(mapped);
 
         return _mapper.Map<AboutUsForResultDto>(result);
